@@ -1,7 +1,6 @@
 const WEEK_DAY_OFFSET = 2
 
 export default () => {
-  console.log('Hello World')
   const weekDay = Math.floor(Math.random() * 7) - 1
   const realWeekDayNumber = logRealWeekDay(weekDay)
   const dayName = getName(realWeekDayNumber)
