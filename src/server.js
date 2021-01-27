@@ -1,13 +1,15 @@
-const WEEK_DAY_OFFSET = 2
-
 export default () => {
-  const weekDay = Math.floor(Math.random() * 7) - 1
-  const realWeekDayNumber = weekDay + WEEK_DAY_OFFSET
-  const dayName = getName(realWeekDayNumber)
-  console.log(dayName)
+  // два числа от 0 до 10. Если первое больше второго - вывести разницу, если наоборот - вывести сумму
+  const a = Math.floor(Math.random() * 11)
+  const b = Math.floor(Math.random() * 11)
+  const result = getResult(a, b)
+  console.log(a, b, result)
 }
 
-const getName = day => {
-  const WEEK_DAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-  return WEEK_DAYS[day - 1]
+const getResult = (a, b) => {
+  if (a > b) {
+    return a - b
+  } else {
+    return a + b
+  }
 }
