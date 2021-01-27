@@ -1,0 +1,30 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+
+# testing
+/coverage
+
+# production
+/build
+/dist
+/images
+
+# misc
+.DS_Store
+.vscode/
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+# Do not use npm
+package-lock.json
+
+# Downloads
+/tiles2
+/quadtree
+/tiles.html
+/tiles
+/cache
+/downloads

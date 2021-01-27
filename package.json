@@ -1,0 +1,72 @@
+{
+  "name": "weather-api",
+  "version": "0.0.1",
+  "description": "weather-api",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "nodemon --ignore ./logs ./src/index.js --exec babel-node",
+    "lint": "eslint ./src",
+    "lintfix": "eslint --fix ./src",
+    "build": "npm run prepare-eslint && npm run prepare-clean && npm run prepare-babel",
+    "prepare-eslint": "eslint --quiet ./src",
+    "prepare-clean": "rm -rf ./build",
+    "prepare-babel": "babel ./src -d ./build"
+  },
+  "author": "Anastasia Lagutkina (mummimora@gmail.com)",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^10.1.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint": "^7.18.0",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "nodemon": "^2.0.7",
+    "prettier": "^2.2.1",
+    "source-map-support": "^0.5.19"
+  },
+  "dependencies": {
+    "app-module-path": "^2.2.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-exorcism": "^0.1.2",
+    "lodash": "^4.17.20"
+  },
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ]
+    ],
+    "plugins": [
+      "transform-object-rest-spread",
+      "transform-class-properties"
+    ]
+  },
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "plugins": [
+      "import"
+    ],
+    "parserOptions": {
+      "ecmaVersion": 2017,
+      "sourceType": "module"
+    },
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "eslint:recommended"
+    ]
+  }
+}
